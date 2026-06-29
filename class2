@@ -1,0 +1,15 @@
+void OneDIntArrayInput(int ar[],int n)                    //inputArray
+{
+    for(int i = 0; i < n; ++i){
+        printf("\nEnter the number : ");
+        scanf("%d",&ar[i]);
+    }
+}
+void Displayarray(int ar[],int n)                        // DisplayArray
+{
+    for(int i = 0; i < n; i++){
+    printf("  %d ",ar[i]);
+    }
+    printf("\n");
+}
+
