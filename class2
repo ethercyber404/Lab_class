@@ -12,4 +12,12 @@ void Displayarray(int ar[],int n)                        // DisplayArray
     }
     printf("\n");
 }
+int insert_last(int ar[],int n,int v)                         //insert at last position        1
+{
+    printf("\nEnter the number : ");
+    ar[n+1] = v;
+    printf("%d added successfully\n",v);
+    return  n + 1;
+}
+
 
