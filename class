@@ -1,8 +1,9 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include"class.h"
 int main(){
-    int n,ch = 0,ar[100],ln = 0,pos = 0,start,end;
+    int n,ch = 0,ar[100],ln = 0,pos = 0,start,end,v;
 
     t :  printf("How many values to be inserted (i-50) : ");
     scanf("%d", &n);
@@ -38,7 +39,19 @@ int main(){
                 printf("\n Inserted Successfully\n");
                 break;
             case 2:
+                printf("          Your choice : 2 \n");
+                printf("     Insertion at specific position\n");
+                printf("\nEnter your position : ");
+                scanf("%d",&pos);
+
+                if(pos >= 0 && pos <= ln){
+                    ln = insert_specific(ar,ln,pos);
+                }
+                else{
+                    printf("Invalid position!\n");
+                }
                 break;
+
             case 3:
                 printf("      Your choice : 3 \n");
                 printf("Display array :- ");
@@ -46,12 +59,21 @@ int main(){
                     Displayarray(ar,ln);
                 }
                 else{
-
+                    printf("Invalid position!\n");
                 }
                 break;
             case 4:
                 break;
             case 5:
+                printf("     Your choice : 5\n");
+                    printf("Enter value for searching : ");
+                if(n > 0){
+                    scanf("%d",&v);
+                    linear_scarch(ar,n,v);
+                }
+                else{
+                    printf("Array is Empty\n");
+                }
                 break;
             case 6:
                 break;
