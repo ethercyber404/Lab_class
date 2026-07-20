@@ -1,3 +1,4 @@
+
 void OneDIntArrayInput(int ar[],int n)                    //inputArray
 {
     for(int i = 0; i < n; ++i){
@@ -12,12 +13,62 @@ void Displayarray(int ar[],int n)                        // DisplayArray
     }
     printf("\n");
 }
-int insert_last(int ar[],int n,int v)                         //insert at last position        1
+int insert_last(int ar[],int n,int v)                    //insert at last position        1
 {
     printf("\nEnter the number : ");
     ar[n+1] = v;
     printf("%d added successfully\n",v);
-    return  n + 1;
+    return  n+1;
 }
+int insert_specific(int ar[],int ln,int pos)             //specificP_input
+{
+    int item;
+    printf("\nEnter the number : ");
+    scanf("%d",&item);
+    for (int i = ln - 1;i >= pos; i--){
+    ar[i+1] = ar[i];
+    }
+    ar[pos] = item;
+    printf("%d added in %d position\n",item,pos);
+    return ln + 1;
+}
+void linear_scarch(int ar[],int n,int v){
+    int count = 0;
+    for(int i = 0; i < n; ++i){
+        if(ar[i] == v){
+            count++;
+        }
+    }
+    if(count == 0){
+        printf("Not Found\n");
+    }
+    else{
+        printf("Total found : %d\n",count);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
