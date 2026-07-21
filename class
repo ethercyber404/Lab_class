@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include"class.h"
 int main(){
-    int n,ch = 0,ar[100],ln = 0,pos = 0,start,end,v;
-
-    t :  printf("How many values to be inserted (i-50) : ");
-    scanf("%d", &n);
+    int n,ch,ar[100],a,pos = 0,start,end,v;
+    t :  printf("How many values to be inserted (1-50) : ");
+    scanf("%d",&n);
     if(n > 0 && n <= 50){
             printf("Insert value\n");
             OneDIntArrayInput(ar,n);
@@ -14,8 +13,9 @@ int main(){
         printf("\nWrong Number of values!!");
         goto t;
     }
-    while (1) {
-        printf("\n      Select Operation \n");
+    while(1)
+    {
+        printf("\nSelect Operation \n");
         printf("press 0 : Exit \n");
         printf("press 1 : Insert at last Position\n");
         printf("press 2 : Insert at specific position \n");
@@ -25,46 +25,41 @@ int main(){
         printf("press 6 : Bubble sort\n");
         printf("press 7 : Binary Search \n");
         printf("Enter your choice: ");
-        scanf("%d", &ch);
+        scanf("%d",&ch);
         switch(ch){
             case 0:
                 exit(0);
             case 1:
-                printf("          Your choice : 1 \n");
-                printf("     Insert a last operation\n");
+                printf("Your choice : Insert at last Position \n");
                 int v;
-                scanf("%d",&v);
-                ln = insert_last(ar,n,v);
-                printf("\n Inserted Successfully\n");
+                n = insert_last(ar,n,v);
                 break;
             case 2:
-                printf("          Your choice : 2 \n");
-                printf("     Insertion at specific position\n");
+                printf("Your choice : Insert at specific position \n");
                 printf("\nEnter your position : ");
                 scanf("%d",&pos);
 
-                if(pos >= 0 && pos <= ln){
-                    ln = insert_specific(ar,ln,pos);
+                if(pos >= 0 && pos <= a){
+                    a = insert_specific(ar,a,pos);
                 }
                 else{
                     printf("Invalid position!\n");
                 }
                 break;
-
             case 3:
-                printf("      Your choice : 3 \n");
+                printf("Your choice : Display array\n");
                 printf("Display array :- ");
                 if(n > 0){
-                    Displayarray(ar,ln);
-                }
+                    Displayarray(ar,n); 
+                } 
                 else{
-                    printf("Invalid position!\n");
+                    printf("Array is empty!\n");
                 }
                 break;
             case 4:
                 break;
             case 5:
-                printf("     Your choice : 5\n");
+                printf("Your choice : for liner Search\n");
                     printf("Enter value for searching : ");
                 if(n > 0){
                     scanf("%d",&v);
@@ -76,9 +71,8 @@ int main(){
                 break;
             case 6:
                 printf("\nYour choice is bubble sort  -- ");
-                scanf("%d",&v);
                 if(n > 0){
-                    bubblesort(n,ln);
+                    bubblesort(ar,n);
                     printf("\nSuccesfully Sorted");
                 }
                 else{
@@ -86,19 +80,20 @@ int main(){
                 }
                 break;
             case 7:
+                bubblesort(ar,n);
+
                 printf("\nYour choice Binary Search");
+                printf("\nEnter the index to be search : ");
                 scanf("%d",&v);
                 if(n > 0){
+                    start = 0; end = n-1;
                     printf("\n");
-                    binarySearch(ln,n,v);
-                    
+                    binarySearch(ar,start,end,v);
                 }
                 else{
                     printf("\nThe array is empty");
                 }
                 break;
-            case 9:
-
             default:
                 printf("Invalid choice!\n");
         }
