@@ -21,17 +21,18 @@ int insert_last(int ar[],int n,int v)                    //insert at last positi
     printf("\n%d added successfully\n",v);
     return  n+1;
 }
-int insert_specific(int ar[],int a,int pos)             //specificP_input
+int insert_specific(int ar[],int n,int pos)             //specificP_input
 {
     int v;
+    n = n+1;
     printf("\nEnter the number : ");
     scanf("%d",&v);
-    for(int i = a - 1;i >= pos; i--){
+    for(int i = n-1;i >= pos;i--){
     ar[i+1] = ar[i];
     }
     ar[pos] = v;
     printf("%d added in %d position\n",v,pos);
-    return a+1;
+    return n+1;
 }
 void linear_scarch(int ar[],int n,int v){
     int count = 0;
