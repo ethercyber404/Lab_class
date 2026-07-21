@@ -38,9 +38,9 @@ int main(){
                 printf("Your choice : Insert at specific position \n");
                 printf("\nEnter your position : ");
                 scanf("%d",&pos);
-
-                if(pos >= 0 && pos <= a){
-                    a = insert_specific(ar,a,pos);
+                pos = pos-1;
+                if(pos >= 0 && pos < n){
+                n = insert_specific(ar,n,pos);
                 }
                 else{
                     printf("Invalid position!\n");
